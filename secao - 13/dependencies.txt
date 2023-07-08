@@ -1,0 +1,10 @@
+npm i express
+npm i nodemon -D
+npm i dotenv 
+npm i sequelize
+npm i mariadb
+npm i -D sequelize-cli
+
+
+### Criar migrations ###
+npx sequelize migration:create --name=alunos
