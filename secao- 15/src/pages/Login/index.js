@@ -2,25 +2,26 @@ import React, { useEffect } from "react";
 import {Title} from "./styled"
 import { Paragrafo } from "./styled";
 import { Container } from "../../styles/GlobalStyles";
-import axios from '../../services/axios';
+import { useDispatch } from "react-redux";
+
+import * as exampleActions from '../../store/modules/example/actions'
 
 export default function Login() {
-    useEffect(()=> {
-        async function getData(){
-            const response = await axios.get('/alunos');
-            console.log(response.data)
-        }
 
-        getData()
-    }, [])
+    const dispatch = useDispatch() // Dispara ações
 
+    function handleClick(e){
+        e.preventDefault()
+
+        dispatch(exampleActions.clicaBotaoRequest())
+    }
     return (
         <Container>
-            <Title isRed >Login
+            <Title>Login
                 <small>Lorem</small>
             </Title>
             <Paragrafo>lorem asdsa asdkasd</Paragrafo>
-            <button type="button">Enviar</button>
+            <button type="button" onClick={handleClick}>Enviar</button>
         </Container>
         
     )
