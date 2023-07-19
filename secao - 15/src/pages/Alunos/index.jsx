@@ -23,7 +23,7 @@ export default function Alunos() {
         <Container>
             <h1>Alunos</h1>
             
-            <div className="container">
+            <div className="container-alunos">
                 {alunos.map(aluno => (
                     <div key={String(aluno.id)}>
                     

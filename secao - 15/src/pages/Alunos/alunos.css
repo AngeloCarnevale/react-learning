@@ -1,8 +1,8 @@
-.container {
+.container-alunos {
     margin-top: 20px;
 }
 
-.container div {
+.container-alunos div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,6 +10,6 @@
     
 }
 
-.container div+div {
+.container-alusnos div+div {
     border-top: 1px solid #d0d0d0;
 }

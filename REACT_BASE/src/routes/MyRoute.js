@@ -3,11 +3,13 @@ import { Route, Redirect} from "react-router-dom";
 
 
 export default function MyRoute({ component: Component, isPrivate, ...rest }){
-    const isLoggedIn = false
+    const isLoggedIn = true
 
     if (isPrivate && !isLoggedIn){
         return (
-            <Redirect to={{pathname: '/login', state: { prevPath: rest.location.pathname}}} />
+            <Redirect
+                to={{pathname: '/login', state: { prevPath: rest.location.pathname}}}
+            />
         )
     }
 
