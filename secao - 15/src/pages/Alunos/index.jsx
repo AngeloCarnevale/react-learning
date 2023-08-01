@@ -10,10 +10,9 @@ export default function Alunos() {
 
     const [alunos, setAlunos] = useState([]) // useState recebe um valor inicial, nesse caso de array pois retorna um array
 
-
     useEffect(()=> {
         async function getData() {
-            const response = await axios.get('/alunos')
+            const response = await axios.get('/users')
             setAlunos(response.data)
         }
         getData()                      
@@ -30,8 +29,8 @@ export default function Alunos() {
                     <span>{aluno.nome}</span>
                     <span>{aluno.email}</span>
 
-                    <Link to={`/aluno/${aluno.id}/edit`}><FaEdit size={16} /></Link>
-                    <Link to={`/aluno/${aluno.id}/delete`}><FaWindowClose size={16} /></Link>
+                    <Link to={`/user/${aluno.id}/edit`}><FaEdit size={16} /></Link>
+                    <Link to={`/user/${aluno.id}/delete`}><FaWindowClose size={16} /></Link>
                     </div>
                 ))}
             </div>
